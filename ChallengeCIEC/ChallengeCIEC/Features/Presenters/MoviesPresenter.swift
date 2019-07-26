@@ -11,7 +11,7 @@ import UIKit
 
 protocol MoviesPresenterDelegate {
     func didChangeCategory(category: MovieCategory)
-    func didUpdateCollectManager(manager: MoviesCollectionManager)
+    func didUpdateCollectBuilder(builder: MoviesCollectionBuilder)
 }
 
 class MoviesPresenter {
@@ -19,8 +19,8 @@ class MoviesPresenter {
     var delegate: MoviesPresenterDelegate?
     
     private(set) var category = MovieCategory.Upcoming
-    private(set) var manager = MoviesCollectionManager(state: .Loading, movies: nil) {
-        didSet { self.delegate?.didUpdateCollectManager(manager: self.manager) }
+    private(set) var builder = MoviesCollectionBuilder(state: .Loading, movies: nil) {
+        didSet { self.delegate?.didUpdateCollectBuilder(builder: self.builder) }
     }
     
     func changeCategory(sender: Int) {
@@ -37,21 +37,21 @@ class MoviesPresenter {
     }
     
     func fetchMovies() {
-        self.manager = MoviesCollectionManager(state: .Loading, movies: nil)
+        self.builder = MoviesCollectionBuilder(state: .Loading, movies: nil)
         
         let service = TheMovieDBService()
         service.getMovies(category: self.category) { (list, error) in
             if let err = error {
-                self.manager = MoviesCollectionManager(state: .Error, error: err.localizedDescription)
+                self.builder = MoviesCollectionBuilder(state: .Error, error: err.localizedDescription)
             } else {
                 if let movies = list {
                     if movies.isEmpty {
-                        self.manager = MoviesCollectionManager(state: .Empty, error: "Empty List")
+                        self.builder = MoviesCollectionBuilder(state: .Empty, error: "Empty List")
                     } else {
-                        self.manager = MoviesCollectionManager(state: .Success, movies: movies)
+                        self.builder = MoviesCollectionBuilder(state: .Success, movies: movies)
                     }
                 } else {
-                    self.manager = MoviesCollectionManager(state: .Error, error: "Parsing Error")
+                    self.builder = MoviesCollectionBuilder(state: .Error, error: "Parsing Error")
                 }
             }
         }

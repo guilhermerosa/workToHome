@@ -19,18 +19,18 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupCollection(manager: self.presenter.manager)
+        self.setupCollection(builder: self.presenter.builder)
         self.presenter.delegate = self
         self.presenter.fetchMovies()
     }
     
-    private func setupCollection(manager: MoviesCollectionManager) {
+    private func setupCollection(builder: MoviesCollectionBuilder) {
         
-        manager.collection = self.collection
-        manager.delegate = self
+        builder.collection = self.collection
+        builder.delegate = self
         
-        self.collection.dataSource = manager
-        self.collection.delegate = manager
+        self.collection.dataSource = builder
+        self.collection.delegate = builder
     }
     
     @IBAction func segmentedAction(_ sender: Any) {
@@ -38,7 +38,7 @@ class MoviesViewController: UIViewController {
     }
 }
 
-extension MoviesViewController: MoviesCollectionManagerProtocol {
+extension MoviesViewController: MoviesCollectionBuilderProtocol {
     func collectionDidSelectItem(movie: Movie) {
         let vc = MovieDetailViewController(movie: movie)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -51,7 +51,7 @@ extension MoviesViewController: MoviesPresenterDelegate {
         self.presenter.fetchMovies()
     }
     
-    func didUpdateCollectManager(manager: MoviesCollectionManager) {
-        self.setupCollection(manager: manager)
+    func didUpdateCollectBuilder(builder: MoviesCollectionBuilder) {
+        self.setupCollection(builder: builder)
     }
 }
