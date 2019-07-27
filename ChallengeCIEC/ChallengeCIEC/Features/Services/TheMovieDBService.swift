@@ -12,48 +12,17 @@ import Alamofire
 
 class TheMovieDBService {
     
-    private let apiKey = "?api_key=404355d226ac1799dcb99c4468b4a545"
-    private let apiURL = "https://api.themoviedb.org/3/"
-    private let apiURLImage = "https://image.tmdb.org/t/p/w500/"
-    
-    typealias closureRequest = (DataResponse<Any>?, Error?) -> Void
-    typealias closureRequestImage = (DataResponse<Data>?, Error?) -> Void
-    
-    private func request(url: String, completion: @escaping closureRequest) {
-        
-        Alamofire.request(url).validate().responseJSON { response in
-            if let error = response.error {
-                completion(nil, error)
-            } else {
-                completion(response, nil)
-            }
-        }
-    }
-    
-    private func requestImage(url: String, completion: @escaping closureRequestImage) {
-        
-        Alamofire.request(url).responseData { (response) in
-            if let error = response.error {
-                completion(nil, error)
-            } else {
-                completion(response, nil)
-            }
-        }
-    }
-}
-
-extension TheMovieDBService {
-    
     typealias closureMovies = ([Movie]?, Error?) -> Void
     typealias closureMovieDetail = (MovieDetail?, Error?) -> Void
     typealias closureMovieImage = (UIImage?, Error?) -> Void
     
+    private var networking = TheMovieDBNetworking()
+    
     func getMovies(category: MovieCategory, completion: @escaping closureMovies) {
         
         let endpoint = (category == .Upcoming) ? "movie/upcoming" : "movie/popular"
-        let urlString = apiURL + endpoint + apiKey
         
-        self.request(url: urlString) { (response, error) in
+        self.networking.request(endpoint: endpoint) { (response, error) in
             if let err = error {
                 completion (nil, err)
             } else {
@@ -73,9 +42,8 @@ extension TheMovieDBService {
         
         if let id = movie.id {
             let endpoint = "movie/\(id)"
-            let urlString = apiURL + endpoint + apiKey
             
-            self.request(url: urlString) { (response, error) in
+            self.networking.request(endpoint: endpoint) { (response, error) in
                 if let err = error {
                     completion (nil, err)
                 } else {
@@ -94,9 +62,8 @@ extension TheMovieDBService {
     
     func getMovieImage(movie: Movie, completion: @escaping closureMovieImage) {
         if let poster = movie.poster {
-            let urlString = apiURLImage + poster
             
-            self.requestImage(url: urlString) { (response, error) in
+            self.networking.requestImage(image: poster) { (response, error) in
                 if let err = error {
                     completion (nil, err)
                 } else {

@@ -19,8 +19,8 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupCollection(builder: self.presenter.builder)
         self.presenter.delegate = self
+        self.setupCollection(builder: self.presenter.builder)
         self.presenter.fetchMovies()
     }
     
