@@ -1,5 +1,5 @@
 //
-//  CollectionViewBuilder.swift
+//  CollectionCellBuilder.swift
 //  ChallengeCIEC
 //
 //  Created by Guilherme Camilo Rosa on 26/07/19.
