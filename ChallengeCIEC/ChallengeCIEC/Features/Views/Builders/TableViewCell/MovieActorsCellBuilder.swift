@@ -22,7 +22,7 @@ class MovieActorsCellBuilder: TableCellBuilder {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: self.identifier,
                                                       for: self.indexPath) as! MovieActorsCell
         
-        if let c = self.credits, self.state == MovieDetailTableBuilderState.SuccessWithCredits.rawValue {
+        if let c = self.credits, let cast = c.cast, cast.count > 0 {
             cell.setup(credits: c)
         }
         
@@ -30,7 +30,7 @@ class MovieActorsCellBuilder: TableCellBuilder {
     }
     
     override func getHeight() -> CGFloat {
-        if self.state == MovieDetailTableBuilderState.SuccessWithCredits.rawValue {
+        if let c = self.credits, let cast = c.cast, cast.count > 0 {
             return 180.0
         } else {
             return 0.0

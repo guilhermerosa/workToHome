@@ -45,11 +45,7 @@ class MovieDetailPresenter {
             if let _ = error {
                 self.builder = MovieDetailTableBuilder(state: .Success, movie: movie, credits: nil)
             } else {
-                if let c = credits, let cast = c.cast, cast.count > 0 {
-                    self.builder = MovieDetailTableBuilder(state: .SuccessWithCredits, movie: movie, credits: c)
-                } else {
-                    self.builder = MovieDetailTableBuilder(state: .Success, movie: movie, credits: nil)
-                }
+                self.builder = MovieDetailTableBuilder(state: .Success, movie: movie, credits: credits)
             }
         }
     }

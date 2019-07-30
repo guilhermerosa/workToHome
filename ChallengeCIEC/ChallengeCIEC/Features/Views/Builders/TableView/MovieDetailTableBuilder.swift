@@ -10,10 +10,7 @@ import Foundation
 import UIKit
 
 enum MovieDetailTableBuilderState: Int {
-    case Loading = 0
-    case Error = 1
-    case Success = 2
-    case SuccessWithCredits = 3
+    case Loading, Error, Success
 }
 
 protocol MovieDetailTableBuilderProtocol {
@@ -46,7 +43,7 @@ extension MovieDetailTableBuilder: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if state == .Success || state == .SuccessWithCredits {
+        if state == .Success {
             return 4
         } else {
             return 1
@@ -57,7 +54,7 @@ extension MovieDetailTableBuilder: UITableViewDataSource, UITableViewDelegate {
         let properties = TableCellBuilderProperties(tableView: tableView,
                                                     indexPath: indexPath,
                                                     state: self.state.rawValue)
-        if state == .Success || state == .SuccessWithCredits {
+        if state == .Success {
             switch indexPath.row {
             case 0:
                 return MovieBackdropCellBuilder(properties: properties, movie: self.movie).height
@@ -80,7 +77,7 @@ extension MovieDetailTableBuilder: UITableViewDataSource, UITableViewDelegate {
                                                     indexPath: indexPath,
                                                     state: self.state.rawValue)
         
-        if state == .Success || state == .SuccessWithCredits {
+        if state == .Success {
          
             switch indexPath.row {
             case 0:
