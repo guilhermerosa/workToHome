@@ -116,4 +116,20 @@ class TheMovieDBService {
             }
         }
     }
+    
+    func getImage(imagePath: String, completion: @escaping closureMovieImage) {
+        
+        self.networking.requestImage(image: imagePath) { (response, error) in
+            if let err = error {
+                completion (nil, err)
+            } else {
+                guard let resp = response, let data = resp.data else {
+                    return completion (nil, nil)
+                }
+                
+                let image = UIImage(data: data)
+                completion(image, nil)
+            }
+        }
+    }
 }

@@ -21,8 +21,7 @@ class MovieActorsCollectionCellBuilder: CollectionCellBuilder {
     override func getCell() -> UICollectionViewCell {
         let cell = self.collection.dequeueReusableCell(withReuseIdentifier: self.identifier,
                                                        for: self.indexPath) as! MovieActorsCollectionCell
-        
-        cell.backgroundColor = .black
+        cell.setup(cast: self.cast)
         
         return cell
     }

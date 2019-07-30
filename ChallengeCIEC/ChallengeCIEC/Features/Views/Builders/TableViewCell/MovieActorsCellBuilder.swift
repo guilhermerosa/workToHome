@@ -31,7 +31,7 @@ class MovieActorsCellBuilder: TableCellBuilder {
     
     override func getHeight() -> CGFloat {
         if self.state == MovieDetailTableBuilderState.SuccessWithCredits.rawValue {
-            return 80.0
+            return 180.0
         } else {
             return 20.0
         }

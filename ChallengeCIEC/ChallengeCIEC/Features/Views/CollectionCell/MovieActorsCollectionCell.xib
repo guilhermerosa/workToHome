@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron Man (voice)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-xa-IQv">
-                                <rect key="frame" x="3" y="16" width="107" height="10"/>
+                                <rect key="frame" x="3" y="14" width="107" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="fJy-qr-ZN8"/>
                                 </constraints>
@@ -44,10 +44,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nGy-Jg-1dH" firstAttribute="top" secondItem="DfC-EQ-nCZ" secondAttribute="top" constant="2" id="2XY-pY-A6S"/>
-                            <constraint firstItem="P0G-xa-IQv" firstAttribute="top" secondItem="nGy-Jg-1dH" secondAttribute="bottom" constant="2" id="4QR-vE-Bm0"/>
+                            <constraint firstItem="P0G-xa-IQv" firstAttribute="top" secondItem="nGy-Jg-1dH" secondAttribute="bottom" id="4QR-vE-Bm0"/>
                             <constraint firstAttribute="height" constant="28" id="4V7-1U-0QM"/>
                             <constraint firstAttribute="trailing" secondItem="nGy-Jg-1dH" secondAttribute="trailing" constant="2" id="BaB-N4-2o4"/>
                             <constraint firstItem="nGy-Jg-1dH" firstAttribute="leading" secondItem="DfC-EQ-nCZ" secondAttribute="leading" constant="2" id="TDW-tB-Si5"/>

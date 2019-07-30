@@ -34,6 +34,18 @@ class MovieActorsCell: UITableViewCell {
 }
 
 extension MovieActorsCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let w = (collectionView.frame.width / 3)
+        let h = w + (w * 0.4)
+        return CGSize(width: w, height: h)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         guard let c = self.credits, let cast = c.cast else { return 0 }

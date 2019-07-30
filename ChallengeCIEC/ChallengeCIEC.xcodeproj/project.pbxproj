@@ -55,7 +55,6 @@
 		5BB04F9D22EFEA6400B6D346 /* MovieActorsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04F9C22EFEA6400B6D346 /* MovieActorsCellBuilder.swift */; };
 		5BB04FA022EFF0CF00B6D346 /* MovieActorsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04F9E22EFF0CF00B6D346 /* MovieActorsCollectionCell.swift */; };
 		5BB04FA122EFF0CF00B6D346 /* MovieActorsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB04F9F22EFF0CF00B6D346 /* MovieActorsCollectionCell.xib */; };
-		5BB04FA322EFF2FD00B6D346 /* MovieDetailActorsCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FA222EFF2FD00B6D346 /* MovieDetailActorsCollectionBuilder.swift */; };
 		5BB04FA722EFF4E800B6D346 /* MovieActorsCollectionCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FA622EFF4E800B6D346 /* MovieActorsCollectionCellBuilder.swift */; };
 		9AC3F2967A3CBABA4D9C9537 /* Pods_ChallengeCIECUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03623E3F76B61FF5C4B5AAD7 /* Pods_ChallengeCIECUITests.framework */; };
 		E439BD851956CB47B69C4B5F /* Pods_ChallengeCIECTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0FC880D1BF4B7D62C27116 /* Pods_ChallengeCIECTests.framework */; };
@@ -138,7 +137,6 @@
 		5BB04F9C22EFEA6400B6D346 /* MovieActorsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorsCellBuilder.swift; sourceTree = "<group>"; };
 		5BB04F9E22EFF0CF00B6D346 /* MovieActorsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorsCollectionCell.swift; sourceTree = "<group>"; };
 		5BB04F9F22EFF0CF00B6D346 /* MovieActorsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieActorsCollectionCell.xib; sourceTree = "<group>"; };
-		5BB04FA222EFF2FD00B6D346 /* MovieDetailActorsCollectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailActorsCollectionBuilder.swift; sourceTree = "<group>"; };
 		5BB04FA622EFF4E800B6D346 /* MovieActorsCollectionCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorsCollectionCellBuilder.swift; sourceTree = "<group>"; };
 		69B57F73F228CC64A1A6599E /* Pods_ChallengeCIEC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengeCIEC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78774FE2AAADC81DB74A9321 /* Pods-ChallengeCIECTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeCIECTests.release.xcconfig"; path = "Target Support Files/Pods-ChallengeCIECTests/Pods-ChallengeCIECTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				052262C322E9DFF400FF1FFC /* Views */,
 				052262C222E9DFCC00FF1FFC /* Models */,
 				052262B422E9DE1600FF1FFC /* Services */,
-				05CC971722EB35C10089A8F4 /* Utils */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -316,18 +313,10 @@
 			path = ChallengeCIECUITests;
 			sourceTree = "<group>";
 		};
-		05CC971722EB35C10089A8F4 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		5B4B532822EBABB300687F7E /* Collection */ = {
 			isa = PBXGroup;
 			children = (
 				052262C922E9E2F100FF1FFC /* MoviesCollectionBuilder.swift */,
-				5BB04FA222EFF2FD00B6D346 /* MovieDetailActorsCollectionBuilder.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -650,7 +639,6 @@
 				05CC971922EB35EB0089A8F4 /* CollectionCellBuilder.swift in Sources */,
 				5B4D680122ECB38E0047A022 /* MovieBackdropCellBuilder.swift in Sources */,
 				5B4B532B22ECA0F600687F7E /* TheMovieDBNetworking.swift in Sources */,
-				5BB04FA322EFF2FD00B6D346 /* MovieDetailActorsCollectionBuilder.swift in Sources */,
 				5B4D67FF22ECB37F0047A022 /* TableCellBuilder.swift in Sources */,
 				5BB04FA722EFF4E800B6D346 /* MovieActorsCollectionCellBuilder.swift in Sources */,
 				05CC971D22EB76E70089A8F4 /* MovieLoadingCollectionCellBuilder.swift in Sources */,

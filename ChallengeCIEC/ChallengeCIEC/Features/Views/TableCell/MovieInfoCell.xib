@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIV-gQ-4jm">
-                        <rect key="frame" x="16" y="8" width="288" height="26.5"/>
+                        <rect key="frame" x="8" y="8" width="304" height="26.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b0-JE-b6C">
-                        <rect key="frame" x="16" y="42.5" width="288" height="14"/>
+                        <rect key="frame" x="8" y="42.5" width="304" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,11 +36,11 @@
                     <constraint firstItem="2b0-JE-b6C" firstAttribute="top" secondItem="eIV-gQ-4jm" secondAttribute="bottom" constant="8" id="2H4-h9-gPp"/>
                     <constraint firstAttribute="bottom" secondItem="2b0-JE-b6C" secondAttribute="bottom" constant="8" id="4dV-fl-EdI"/>
                     <constraint firstItem="eIV-gQ-4jm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="5aQ-ru-hEt"/>
-                    <constraint firstAttribute="trailing" secondItem="2b0-JE-b6C" secondAttribute="trailing" constant="16" id="Hjc-qm-0cV"/>
-                    <constraint firstAttribute="trailing" secondItem="eIV-gQ-4jm" secondAttribute="trailing" constant="16" id="JsB-iE-Zm3"/>
+                    <constraint firstAttribute="trailing" secondItem="2b0-JE-b6C" secondAttribute="trailing" constant="8" id="Hjc-qm-0cV"/>
+                    <constraint firstAttribute="trailing" secondItem="eIV-gQ-4jm" secondAttribute="trailing" constant="8" id="JsB-iE-Zm3"/>
                     <constraint firstItem="2b0-JE-b6C" firstAttribute="top" secondItem="eIV-gQ-4jm" secondAttribute="bottom" constant="8" id="ZPs-BG-SID"/>
-                    <constraint firstItem="eIV-gQ-4jm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="p8Q-PD-u5e"/>
-                    <constraint firstItem="2b0-JE-b6C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ppQ-ch-9Jr"/>
+                    <constraint firstItem="eIV-gQ-4jm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="p8Q-PD-u5e"/>
+                    <constraint firstItem="2b0-JE-b6C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ppQ-ch-9Jr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
