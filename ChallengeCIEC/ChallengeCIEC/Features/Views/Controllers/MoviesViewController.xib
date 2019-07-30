@@ -33,6 +33,7 @@
                         <segment title="Upcoming"/>
                         <segment title="Popular"/>
                     </segments>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <action selector="segmentedAction:" destination="-1" eventType="valueChanged" id="jfu-wb-knk"/>
                     </connections>

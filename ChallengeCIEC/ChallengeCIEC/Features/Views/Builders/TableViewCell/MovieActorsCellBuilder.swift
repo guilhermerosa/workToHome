@@ -33,7 +33,7 @@ class MovieActorsCellBuilder: TableCellBuilder {
         if self.state == MovieDetailTableBuilderState.SuccessWithCredits.rawValue {
             return 180.0
         } else {
-            return 20.0
+            return 0.0
         }
     }
 }

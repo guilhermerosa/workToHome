@@ -26,14 +26,14 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "details"
-        
         self.setupPresenter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.tintColor = .darkGray
+        self.title = "details"
     }
     
     private func setupPresenter() {
@@ -48,6 +48,7 @@ class MovieDetailViewController: UIViewController {
         
         self.tableView.dataSource = builder
         self.tableView.delegate = builder
+        self.tableView.reloadData()
     }
 }
 

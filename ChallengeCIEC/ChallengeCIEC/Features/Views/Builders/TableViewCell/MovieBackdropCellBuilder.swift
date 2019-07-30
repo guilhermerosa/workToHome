@@ -30,6 +30,9 @@ class MovieBackdropCellBuilder: TableCellBuilder {
     }
     
     override func getHeight() -> CGFloat {
+        
+        guard let m = movie, let bg = m.backdrop, !bg.isEmpty else { return 0 }
+        
         let baseW: CGFloat = 500.0
         let baseH: CGFloat = 281.0
         

@@ -18,13 +18,13 @@ class MoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupPresenter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = .darkGray
     }
     
     private func setupPresenter() {
@@ -40,6 +40,7 @@ class MoviesViewController: UIViewController {
         
         self.collection.dataSource = builder
         self.collection.delegate = builder
+        self.collection.reloadData()
     }
     
     @IBAction func segmentedAction(_ sender: Any) {
