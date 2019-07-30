@@ -21,16 +21,23 @@ class MovieDetailActorsCollectionBuilder: NSObject {
 extension MovieDetailActorsCollectionBuilder: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-        guard let cast = self.credits.cast else { return 0 }
+        guard let cast = self.credits.cast else {
+            return 0
+            
+        }
         return cast.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let castList = self.credits.cast else { return UICollectionViewCell() }
+        guard let castList = self.credits.cast else {
+            return UICollectionViewCell()
+            
+        }
         
         let properties = CollectionCellBuilderProperties(collection: collectionView, indexPath: indexPath)
         let cast = castList[indexPath.item]
         
         return MovieActorsCollectionCellBuilder(properties: properties, cast: cast).cell
     }
+    
 }
