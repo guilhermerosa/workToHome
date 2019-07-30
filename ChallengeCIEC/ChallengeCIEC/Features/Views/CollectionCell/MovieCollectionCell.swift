@@ -25,20 +25,20 @@ class MovieCollectionCell: UICollectionViewCell {
 extension MovieCollectionCell {
     
     private func serviceImage(movie: Movie) {
-        let service = TheMovieDBService()
         
-        service.getMoviePoster(movie: movie) { (image, error) in
+        guard let poster = movie.poster else { return self.imageBanner.backgroundColor = .lightGray }
+        
+        let service = TheMovieDBService()
+        service.getImage(imagePath: poster) { (image, error) in
             if let err = error {
-                print("deu errado error")
                 print(err)
             } else {
                 if let img = image {
                     self.imageBanner.image = img
                 } else {
-                    print("deu errado image")
+                    print("image parsing error")
                 }
             }
         }
-        
     }
 }

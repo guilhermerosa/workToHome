@@ -34,22 +34,20 @@ class MovieBackdropCell: UITableViewCell {
 extension MovieBackdropCell {
     
     private func serviceImage(movie: MovieDetail?) {
+        
+        guard let m = movie, let backdrop = m.backdrop else { return }
+        
         let service = TheMovieDBService()
-        
-        guard let m = movie else { return }
-        
-        service.getMovieBackdrop(movie: m) { (image, error) in
+        service.getImage(imagePath: backdrop) { (image, error) in
             if let err = error {
-                print("deu errado error")
                 print(err)
             } else {
                 if let img = image {
                     self.imageBackdrop.image = img
                 } else {
-                    print("deu errado image")
+                    print("image parsing error")
                 }
             }
         }
-        
     }
 }

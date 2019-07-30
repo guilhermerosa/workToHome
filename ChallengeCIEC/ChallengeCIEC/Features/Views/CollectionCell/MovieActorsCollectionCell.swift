@@ -32,7 +32,7 @@ class MovieActorsCollectionCell: UICollectionViewCell {
 extension MovieActorsCollectionCell {
     
     private func serviceImage(image: String?) {
-        guard var img = image else { return }
+        guard var img = image else { return self.imagePhoto.backgroundColor = .lightGray }
         
         img.remove(at: img.startIndex)
         
