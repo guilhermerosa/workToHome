@@ -13,15 +13,23 @@ struct MovieDetail: Codable {
     let title: String?
     let overview: String?
     let popularity: Double?
-    let posterPath: String?
     let homepage: String?
+    let posterPath: String?
+    let backdrop: String?
+    let runtime: Int?
+    let releaseDate: String?
+    let genres: [Genre]?
     
     private enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
         case overview = "overview"
         case popularity = "popularity"
-        case posterPath = "poster_path"
         case homepage = "homepage"
+        case posterPath = "poster_path"
+        case backdrop = "backdrop_path"
+        case runtime = "runtime"
+        case releaseDate = "release_date"
+        case genres = "genres"
     }
 }

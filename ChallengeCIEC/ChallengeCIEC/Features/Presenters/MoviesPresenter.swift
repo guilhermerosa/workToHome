@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 protocol MoviesPresenterDelegate {
     func didChangeCategory(category: MovieCategory)

@@ -21,7 +21,7 @@ class TheMovieDBNetworking {
     
     func request(endpoint: String, completion: @escaping closureRequest) {
         
-        let url = apiURL + endpoint + apiKey
+        let url = self.apiURL + endpoint + self.apiKey
         
         Alamofire.request(url).validate().responseJSON { response in
             if let error = response.error {

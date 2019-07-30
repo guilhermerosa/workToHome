@@ -19,8 +19,17 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupPresenter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    private func setupPresenter() {
+        self.presenter = MoviesPresenter()
         self.presenter.delegate = self
-        self.setupCollection(builder: self.presenter.builder)
         self.presenter.fetchMovies()
     }
     

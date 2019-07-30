@@ -10,7 +10,10 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     private var movie: Movie!
+    private var presenter = MovieDetailPresenter()
     
     init(movie: Movie) {
         super.init(nibName: nil, bundle: nil)
@@ -23,7 +26,37 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = self.movie.title
+        self.title = "details"
+        
+        self.setupPresenter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func setupPresenter() {
+        self.presenter = MovieDetailPresenter()
+        self.presenter.delegate = self
+        self.presenter.fetchMovieDetail(movie: self.movie)
+    }
+    
+    private func setupTableView(builder: MovieDetailTableBuilder){
+        builder.tableView = self.tableView
+        builder.delegate = self
+        
+        self.tableView.dataSource = builder
+        self.tableView.delegate = builder
+    }
+}
+
+extension MovieDetailViewController: MovieDetailTableBuilderProtocol {
+    
+}
+
+extension MovieDetailViewController: MovieDetailPresenterProtocol {
+    func didUpdateBuilder(builder: MovieDetailTableBuilder) {
+        self.setupTableView(builder: builder)
     }
 }

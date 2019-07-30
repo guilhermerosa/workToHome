@@ -20,11 +20,14 @@ class MovieCollectionCell: UICollectionViewCell {
         self.imageBanner.contentMode = .scaleAspectFit
         self.serviceImage(movie: movie)
     }
+}
+
+extension MovieCollectionCell {
     
     private func serviceImage(movie: Movie) {
         let service = TheMovieDBService()
         
-        service.getMovieImage(movie: movie) { (image, error) in
+        service.getMoviePoster(movie: movie) { (image, error) in
             if let err = error {
                 print("deu errado error")
                 print(err)
