@@ -36,17 +36,13 @@ class MovieActorsCell: UITableViewCell {
 extension MovieActorsCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard let c = self.credits, let cast = c.cast else {
-            return 0
-            
-        }
+        guard let c = self.credits, let cast = c.cast else { return 0 }
         return cast.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let c = self.credits, let castList = c.cast else {
-            return UICollectionViewCell()
-        }
+        
+        guard let c = self.credits, let castList = c.cast else { return UICollectionViewCell() }
         
         let properties = CollectionCellBuilderProperties(collection: collectionView, indexPath: indexPath)
         let cast = castList[indexPath.item]
